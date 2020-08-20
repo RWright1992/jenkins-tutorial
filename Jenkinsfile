@@ -25,7 +25,8 @@ pipeline{
 	}
         stage('Deploy'){
                 steps{
-                sh 'cd ~ && cd API-Test && sudo docker-compose up -d'
+		sh 'pwd'
+                sh 'cd .. && sudo docker-compose up -d'
                 }
 	}
 	}
