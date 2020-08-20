@@ -3,7 +3,7 @@ pipeline{
         stages{
         stage('Clone Repo'){
                 steps{
-                sh 'git fetch https://github.com/RWright1992/API-Test.git'
+                sh 'git fetch https://github.com/RWright1992/API-Test.git && cd API-Test'
                 }
 	}
         stage('Install Docker + Docker Compose'){
@@ -13,7 +13,7 @@ pipeline{
 	}
         stage('Deploy'){
                 steps{
-                sh 'cd API-Test && sudo docker-compose up -d'
+                sh 'sudo docker-compose up -d'
                 }
 	}
 	}
