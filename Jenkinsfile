@@ -17,10 +17,9 @@ pipeline{
 	stage(Test){
 		steps{
 		sh 'cd API-Test/service1 && pip3 install -r requirements.txt'
-		sh 'python3 -m pytest'
+		sh 'cd API-Test/service1 && python3 -m pytest'
 		sh 'cd ..'
-		sh 'cd API-Test/service2'
-		sh 'python3 -m pytest'
+		sh 'cd API-Test/service2 && python3 -m pytest'
 		}
 	}
         stage('Deploy'){
