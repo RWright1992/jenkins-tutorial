@@ -16,10 +16,10 @@ pipeline{
 	stage(Test){
 		steps{
 		sh 'cd API-Test/service1 && pip3 install pytest'
-		sh 'python -m pytest'
+		sh 'python3 -m pytest'
 		sh 'cd ..'
 		sh 'cd API-Test/service2 && pip3 install pytest'
-		sh 'python -m pytest'
+		sh 'python3 -m pytest'
 		}
 	}
         stage('Deploy'){
